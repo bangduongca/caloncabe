@@ -1,0 +1,213 @@
+/* Thiết lập chung */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 150, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Canvas game */
+#gameCanvas {
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Header hiển thị điểm và thời gian */
+.game-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+}
+
+.score, .time, .size {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Màn hình bắt đầu */
+.start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 100, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 20;
+    text-align: center;
+    padding: 20px;
+}
+
+.start-screen h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.start-screen p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.instructions {
+    margin-top: 20px;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Màn hình kết thúc */
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 20;
+}
+
+.game-over h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff5252;
+}
+
+.game-over p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Các nút điều khiển */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Điều khiển di động */
+.controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 15;
+}
+
+.mobile-controls {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.horizontal-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hiển thị điều khiển trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex;
+    }
+    
+    .game-container {
+        height: 500px;
+    }
+    
+    .game-header {
+        font-size: 14px;
+        padding: 5px;
+    }
+    
+    .score, .time, .size {
+        font-size: 14px;
+    }
+}
+
+/* Hiệu ứng */
+@keyframes bubbleFloat {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}

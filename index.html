@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cá Lớn Nuốt Cá Bé </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score">Điểm: <span id="score">0</span></div>
+            <div class="time">Thời gian: <span id="time">0</span></div>
+            <div class="size">Kích thước: <span id="size">1</span></div>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="controls">
+            <div class="mobile-controls">
+                <button id="up">↑</button>
+                <div class="horizontal-controls">
+                    <button id="left">←</button>
+                    <button id="right">→</button>
+                </div>
+                <button id="down">↓</button>
+            </div>
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            <h2>Game Over</h2>
+            <p>Điểm của bạn: <span id="finalScore">0</span></p>
+            <p>Thời gian sống sót: <span id="survivalTime">0</span> giây</p>
+            <button id="restartButton">Chơi lại</button>
+        </div>
+        
+        <div class="start-screen" id="startScreen">
+            <h1>Cá Lớn Nuốt Cá Bé </h1>
+            <p>Di chuyển để ăn các con cá nhỏ hơn và tránh các chữ cái rơi xuống</p>
+            <button id="startButton">Bắt đầu chơi</button>
+            <div class="instructions">
+                <h3>Hướng dẫn:</h3>
+                <p>- Sử dụng các phím mũi tên để di chuyển con cá</p>
+                <p>- Ăn cá nhỏ hơn để tăng kích thước</p>
+                <p>- Tránh các chữ cái tiếng Việt đang rơi</p>
+                <p>- Cố gắng sống sót càng lâu càng tốt</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="eatSound" src="https://assets.mixkit.co/active_storage/sfx/2532/2532-preview.mp3" preload="auto"></audio>
+    <audio id="hitSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" preload="auto"></audio>
+    <audio id="gameOverSound" src="https://assets.mixkit.co/active_storage/sfx/2658/2658-preview.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="https://assets.mixkit.co/active_storage/sfx/209/209-preview.mp3" preload="auto" loop></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
